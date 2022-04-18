@@ -1,0 +1,41 @@
+<div class="nav">
+    <h1>Venta a Empresas</h1>
+  </div>
+  <div class="portada">
+    <img src="assets/cara1.jpg" alt="empresas-maroishi">
+  </div>
+<div class="nav1">
+    <h1>Beneficios de trabajar con Nosotros</h1>
+  </div>
+<div class="beneficios">
+    <img src="assets/BENEFICIOS.jpg" alt="empresas-maroishi">
+  </div>
+
+<div class="container-form">
+
+  <div class="info-form">
+    <h2>Cotiza con nosotros</h2>
+    <p>
+      Nuestro equipo de trabajo esta capacitado para atender tu llamada sea cotizacion de producto o cotizaciones.
+      <br>Para cualquier inofrmación contactate por nosotros por cualquier medio de comunicación
+    </p>
+    <p><i class="fa fa-phone"></i>+51 981646447</p>
+    <p><i class="fa fa-envelope"></i>  Cotizacionesmaroishi@gmail.com</p>
+    <p><i class="fa fa-map-marked"></i>  Lima, Perú</p>
+  </div>
+  <form action="#" autocomplete="off">
+            <span>Ingrese su correo para una pronta respuesta</span>
+            <span class="p-float-label">
+            <input  class="campo" #name id="float-input" type="text" pInputText>
+            <label for="float-input"></label>
+            </span>
+
+    <span class="p-float-label area">
+            <textarea id="float-input2" rows="5" cols="30" pInputTextarea #cuerpo></textarea>
+            <label for="float-input2">Ingrese su consulta</label>
+            </span>
+
+    <input type="button" name="enviar" value="Enviar " class="btn-enviar" (click)="enviarCorreo('alemanuel36@gmail.com',name.value,cuerpo.value)" >
+  </form>
+ </div>
+

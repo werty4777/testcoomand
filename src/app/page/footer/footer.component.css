@@ -1,0 +1,249 @@
+.pie-pagina {
+    width: 100%;
+    background: #0c4a97;
+  height: 115px;
+
+
+}
+
+.pie-pagina .grupo1 {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:100px;
+    padding: 20px 0;
+    column-gap: 100px;
+    align-items: center;
+    text-align: center;
+    line-height: 25px;
+}
+
+.pie-pagina .grupo1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c4a97;
+
+}
+
+.pie-pagina .grupo1 .box figure img {
+    width: 250px;
+
+}
+
+.grupo1 {
+    display: flex;
+    column-gap: 20px;
+    background: #0c4a97;
+
+  height: 110px;
+
+}
+
+.box img {
+    background: #ccc;
+}
+
+.box a {
+    font-size: 10px;
+    color: #fff;
+}
+
+.box > h2 {
+    font-size: 15px;
+    color: #fff;
+
+}
+
+.red-social a {
+    font-size: 20px;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: #0c4a97;
+    line-height: 45px;
+    margin-right: 10px;
+    transition: all 300ms ease;
+}
+
+.grupo2 {
+    background: #0a1a2a;
+    padding: 5px 10px;
+    text-align: center;
+    color: #fff;
+  width: 100%;
+
+}
+
+.red-social a:hover {
+    background: #fff;
+    color: #0c4a97;
+}
+.grupo2 small{
+    font-size: 12px;
+}
+.flotante1 {
+  background: none;
+    position: fixed !important;
+    bottom: 80px !important;
+    right: 20px !important;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+.flotante2{
+    background: none;
+    position: fixed ;
+    bottom: 20px ;
+    right: 20px ;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.flotante1 a{
+    color: #fff;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+
+}
+.flotante2 a{
+    color: #fff;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+
+}
+.wsp{
+    background:#2fba43;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+
+
+}
+.msn{
+
+    background: #008dff ;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+}
+
+.wsp:hover{
+    background: #fff;
+    font-size: 40px;
+}
+.flotante1 a:hover{
+    color: #2fba43;
+
+}
+.msn:hover{
+    background: #fff;
+
+}
+.flotante2 a:hover{
+    color: #008dff;
+
+}
+.iconitos  i{
+  font-size:20px;
+    background: #262626;
+    transition: all 300ms ease;
+}
+
+.iconitos i:hover{
+  color:#262626;
+  background: white;
+}
+@media screen and (max-width: 720px){
+  .flotante1 {
+    background: none;
+    position: fixed !important;
+    bottom: 130px !important;
+    right: 40px !important;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+  }
+  .flotante2{
+    background: none;
+    position: fixed ;
+    bottom: 20px ;
+    right: 40px ;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+  .flotante1 a{
+    color: #fff;
+    font-size: 30px;
+    width: 80px;
+    height: 80px;
+
+  }
+  .flotante2 a{
+    color: #fff;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+
+  }
+  .wsp{
+    background:#2fba43;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    line-height: 100px;
+    font-size: 50px;
+  }
+  .msn{
+    background: #008dff ;
+    width: 100px;
+    height:100px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    line-height:100px;
+  }
+
+  .wsp:hover{
+    background: #fff;
+    font-size: 40px;
+  }
+  .flotante1 a:hover{
+    color: #2fba43;
+
+  }
+  .msn:hover{
+    background: #fff;
+
+  }
+  .flotante2 a:hover{
+    color: #008dff;
+
+  }
+}
+

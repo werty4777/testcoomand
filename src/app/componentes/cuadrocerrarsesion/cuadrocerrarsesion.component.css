@@ -1,0 +1,26 @@
+.login-box{
+  display: flex;
+  z-index:999999!important;
+  position:fixed;
+  left:82vw;
+  top:14vh;
+}
+.caja{
+  border-radius:5px;
+  width: 200px;
+  height: 80px;
+  font-size: 14px!important;
+  color:#000000!important;
+  border:solid 1px #ccc;
+  background:#fff;
+  padding: 5px;
+}
+button{
+  width: 100%;
+margin-top:10px;
+  border-bottom: solid 1px #ccc;
+}
+button:hover{
+  background: #84c3ff;
+}
+

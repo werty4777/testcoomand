@@ -1,0 +1,37 @@
+<div class="login-box">
+  <div class="caja">
+
+    <form action="#">
+      <label   class="correo" >Correo electronico</label>
+      <input #email (focusin)="mostrar()" autocomplete="none" (focusout)="ocultar()" type="email" placeholder="Ingresa tu correo electrónico">
+
+      <label class="contra">Contraseña</label>
+      <input #contra (focusin)="mostrar()" autocomplete="none" (focusout)="ocultar()"  type="password" placeholder="Ingresa tu contraseña" >
+
+
+      <div class="forgot">
+
+        <a  (click)="relacion()"  >¿Olvidaste tu contraseña? </a>
+      </div>
+
+      <div class="btn1">
+        <button (click)="Login(email.value,contra.value)"  class="registra" type="button" >Inicia Sesion</button>
+
+      </div>
+
+      <div class="sing">
+        <p>¿No eres cliente nuestro?</p>
+
+      </div>
+
+      <div class="btn2">
+        <a   routerLink="/Registro"><button  class="registra" type="button" >Registrate</button></a>
+      </div>
+
+
+
+    </form>
+  </div>
+
+</div>
+

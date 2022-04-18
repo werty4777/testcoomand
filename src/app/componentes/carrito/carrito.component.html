@@ -1,0 +1,53 @@
+<div class="wrap-carrito w-full h-full py-4 flex flex-col gap-y-2">
+<div class="w-full flex flex-col gap-10">
+
+<div class='order-info w-full'>
+      <div class='order-info-content w-full '>
+        <h2>Carrito de compras</h2>
+                <div class='line'></div>
+
+        <div class="item " style="position:relative" *ngFor="let item of data">
+
+          <div class="closeicon" style="position:absolute;z-index: 999999999999999999999999999999999999" (click)="eliminarProducto(item)">
+
+            <i  class="far fa-times-circle"></i>
+
+          </div>
+        <table class='order-table' >
+          <tbody>
+            <tr>
+              <td><img [src]="item.image" class='full-width'>
+              </td>
+              <td>
+                <br> <span class='thin'>{{item.product_name}}</span>
+
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <div class='price'>{{item.unite_price}}</div>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+          <div class='line'></div>
+        </div>
+
+</div>
+</div>
+
+
+  <div class="pagar w-full  flex flex-row justify-center  py-5 Fixed"  *ngIf="data.length>0" >
+
+    <button routerLink="/pago">Pagar</button>
+
+  </div>
+
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,122 @@
+<div class="wrap w-full h-full flex flex-row">
+
+
+  <div class="barraizquierda w-1/6" >
+
+
+<p-fieldset legend="Marca" [toggleable]="true" [transitionOptions]="'300ms'">
+    <p-listbox (onChange)="cambioMarca()" [options]="marcas" [(ngModel)]="marcasseleccionadas" optionLabel="name"  [filter]="true" [style]="{'width':'12rem'}" [multiple]="true" [checkbox]="true"></p-listbox>
+</p-fieldset>
+
+<p-fieldset legend="Precio" [toggleable]="true" [transitionOptions]="'300ms'">
+ <h5>Rango de Precios: <br>      {{rangeValues[0] + ' - ' + rangeValues[1]}} </h5>
+<p-slider [(ngModel)]="rangeValues" [range]="true" [max]="500" (onChange)="handleChange($event)"></p-slider>
+  <div class="precios flex flex-col gap-y-5">
+      <div class="field-checkbox flex flex-row gap-x-3 pl-2">
+    <p-checkbox name="group1" [value]="false" [(ngModel)]="ListaPrecios" inputId="ny" (click)="cajitaprecio(0,50,ListaPrecios)"></p-checkbox>
+    <label >  Hasta - S/.50</label>
+</div>
+<div class="field-checkbox flex flex-row gap-x-3 pl-2 ">
+    <p-checkbox name="group1" [value]="false" [(ngModel)]="ListaPrecios1" inputId="ny" (click)="cajitaprecio(50,100,ListaPrecios1)"></p-checkbox>
+    <label>  S/.50 - S/.100</label>
+</div>
+<div class="field-checkbox flex flex-row gap-x-3 pl-2">
+    <p-checkbox name="group1" [value]="false" [(ngModel)]="ListaPrecios2" inputId="ny" (click)="cajitaprecio(100,150,ListaPrecios2)"></p-checkbox>
+    <label>  S/.100 - S/.150</label>
+</div>
+<div class="field-checkbox flex flex-row gap-x-3 pl-2">
+    <p-checkbox name="group1" [value]="false" [(ngModel)]="ListaPrecios3" inputId="ny" (click)="cajitaprecio(150,200,ListaPrecios3)"></p-checkbox>
+    <label>  S/.150 - S/.200</label>
+</div>
+  </div>
+
+
+</p-fieldset>
+
+
+ <p-fieldset legend="Medidas" [toggleable]="true" [transitionOptions]="'300ms'">
+<p-listbox [options]="Medidas" [(ngModel)]="Medidasseleccionadas" optionLabel="name"  [filter]="true" [style]="{'width':'12rem'}" [multiple]="true" [checkbox]="true">
+
+</p-listbox>
+</p-fieldset>
+  </div>
+<div  class="flex flex-col w-5/6 h-full p-10 bg-blue-500-100 text-gray-800 Productos" >
+
+	<h1 class="text-3xl">Lista de Productos</h1>
+	<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mt-6">
+		<span class="text-sm font-semibold">1- {{data.length}} Productos</span>
+		<button class="relative text-sm focus:outline-none group mt-4 sm:mt-0">
+
+			<p-dropdown optionValue="code" (onChange)="validarDatacambio()" [options]="opciones" [(ngModel)]="opcionselecionada" optionLabel="name"></p-dropdown>
+
+		</button>
+	</div>
+	<div class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full mt-6">
+
+ <div class="cuadrote bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300" *ngFor="let item of data">
+        <figure class="mb-2">
+          <img src="{{item.image}}" alt="" class="h-64 ml-auto mr-auto" />
+        </figure>
+        <div class="rounded-lg p-4  flex flex-col cuadrito">
+          <div>
+            <h5 class="text-white text-2xl font-bold leading-none">
+              {{item.product_name}}
+            </h5>
+
+          </div>
+          <div class="flex flex-row">
+
+            <div class="flex items-center  flex-row justify-center fuera items-center text-center">
+              <div class="borde">
+                <div class="text-lg text-white font-light precioasos">
+                  S/{{item.unite_price}}
+                </div>
+              </div>
+
+            </div>
+            <button (click)="agregarCarrito(item)"  class="botoncarrito rounded-full bg-dazzle-strong text-white flex flex-row justify-center items-center hover:bg-white hover:text-dazzle-strong hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+		<!--<div *ngFor="let item of data">
+			<div  class="block h-64 rounded-lg shadow-lg bg-white" [ngStyle]="{'background-image': 'url(' + item.foto + ')'}" style="background-repeat: no-repeat;
+
+background-size: contain;
+;background-position: center;
+"
+
+
+      >
+
+
+
+      </div>
+			<div class="flex items-center justify-between mt-3">
+				<div>
+					<a href="#" class="font-medium">{{item.nombre}}</a>
+
+				</div>
+				<span class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">S/{{item.precio}}</span>
+			</div>
+		</div>-->
+
+		<!-- Product Tile End -->
+	</div>
+
+	<!-- Component End  -->
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+

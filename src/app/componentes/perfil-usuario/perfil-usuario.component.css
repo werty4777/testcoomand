@@ -1,0 +1,88 @@
+.cabecera h1{
+  color: #0c4a97;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -25px;
+  padding-left: 10px;
+}
+.cabecera p{
+  font-size: 13px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.cabecera{
+  border-bottom:  solid #0c4a97 2px;
+}
+.datos{
+  margin-top: 30px;
+}
+.iden{
+  margin-top:30px;
+}
+.iden h4{
+  font-size: 12px;
+  padding:5px;
+}
+
+.num{
+  margin-top:30px;
+}
+.num h4{
+  font-size: 12px;
+  padding:5px;
+}
+
+.fecha{
+  margin-top:30px;
+}
+.fecha h4{
+  font-size: 12px;
+  padding:5px;
+}
+
+.pie h1{
+  color: #0c4a97;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+.pie p{
+  font-size: 13px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.pie{
+  border-bottom:  solid #0c4a97 2px;
+}
+
+.pass{
+  margin-top:30px;
+}
+.pass h3{
+  font-size: 12px;
+  padding:5px;
+}
+
+.passn{
+  margin-top:30px;
+}
+.passn h3{
+  font-size: 12px;
+  padding:5px;
+}
+.boton button{
+  width:auto;
+  padding: 10px 20px;
+  border-radius:150px;
+  background: #008dff;
+  color:#ffffff;
+  font-weight: bold;
+}
+.boton button:hover{
+  background: #6cb7f5;
+}
+
+.boton{
+  margin-top:30px;
+}

@@ -1,0 +1,199 @@
+
+
+
+<div class="container mx-auto mt-40 ">
+  <div class="flex shadow-md my-10">
+    <div class="w-3/4 bg-white px-10 py-10">
+      <div class="flex justify-between border-b pb-8">
+        <h1 class="font-semibold text-2xl">Carrito de Compras</h1>
+        <h2 class="font-semibold text-2xl">{{data.length}} producto{{data.length==1 ? '': 's'}}</h2>
+      </div>
+      <div class="flex mt-10 mb-5">
+        <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
+        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
+        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
+        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
+      </div>
+      <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5" *ngFor="let item of data">
+        <div class="flex w-2/5"> <!-- product -->
+          <div class="w-20">
+            <img class="h-24" [src]="item.image" alt="">
+          </div>
+          <div class="flex flex-col justify-between ml-4 flex-grow">
+            <span class="font-bold text-sm">{{item.product_name}}</span>
+
+            <a (click)="eliminarCarritoProducto(item)" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+          </div>
+        </div>
+        <div class="flex justify-center w-1/5">
+          <svg (click)="disminuir(item)" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+          </svg>
+
+          <input class="mx-2 border text-center w-8" type="text" [value]="item.quantity">
+
+          <svg (click)="aumentar(item)" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+            <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+          </svg>
+        </div>
+        <span class="text-center w-1/5 font-semibold text-sm">{{item.unite_price | number:'1.2-3':'en-US'}}</span>
+        <span class="text-center w-1/5 font-semibold text-sm">{{item.quantity*item.unite_price | number:'1.2-3':'en-US'}}</span>
+      </div>
+
+
+
+  <!--    <a  class="flex font-semibold text-indigo-600 text-sm mt-10">
+
+        <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
+        Continue Shopping
+      </a>-->
+    </div>
+
+    <div id="summary" class="w-1/4 px-8 py-10">
+      <h1 class="font-semibold text-2xl border-b pb-8">Resumen del pedido</h1>
+      <div class="flex justify-between mt-10 mb-5" *ngFor="let item of data">
+        <span class="font-semibold text-sm uppercase">{{item.product_name}}</span>
+        <span class="font-semibold text-sm">{{item.quantity*item.unite_price | number:'1.2-3':'en-US'}}</span>
+      </div>
+
+
+
+      <div class="border-t mt-8">
+        <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+          <span>Total</span>
+          <span>{{datatotal | number:'1.2-3':'en-US'}}</span>
+        </div>
+        <p-button (click)="showBasicDialog()" icon="pi pi-external-link" label="Pagar"></p-button>
+        <p-dialog header="Title" [(visible)]="displayBasic"  >
+
+
+
+          <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 pb-10 pt-16">
+            <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px">
+
+              <form id="form-checkout" (ngSubmit)="pay()" >
+                <label for="">numero de tarjeta</label>
+                <input type="text" name="cardNumber" id="form-checkout__cardNumber" [(ngModel)]="a" [ngModelOptions]="{standalone: true}" />
+                <label for="">fecha  de expiro</label>
+                <input type="text" name="cardExpirationDate" id="form-checkout__cardExpirationDate" [(ngModel)]="b" [ngModelOptions]="{standalone: true}" />
+                <label for="">Nombre de persona</label>
+                <input type="text" name="cardholderName" id="form-checkout__cardholderName" [(ngModel)]="c" [ngModelOptions]="{standalone: true}"/>
+                <label for="">correo</label>
+                <input type="email" name="cardholderEmail" id="form-checkout__cardholderEmail" [(ngModel)]="d" [ngModelOptions]="{standalone: true}"/>
+                <label for="">codigo de tarjeta</label>
+                <input type="text" name="securityCode" id="form-checkout__securityCode" [(ngModel)]="e" [ngModelOptions]="{standalone: true}"/>
+                <label for="">tipo de tarjeta</label>
+                <select name="issuer" id="form-checkout__issuer" >
+
+                  <option value="visa" selected>visa</option>
+                  <!--<option value="visa" selected>visa</option>-->
+
+                </select>
+                <label for="">credito o debito</label>
+                <select name="identificationType" id="form-checkout__identificationType">
+
+                  <option selected value="debit_card">debit_card</option>
+                  <option selected value="credit_card">credit_card</option>
+
+                </select>
+                <label for="">dni</label>
+                <input type="text" name="identificationNumber" id="form-checkout__identificationNumber" [(ngModel)]="f" [ngModelOptions]="{standalone: true}"/>
+                <label for="">cuotas</label>
+                <select name="installments" id="form-checkout__installments" ></select>
+                <button type="submit" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"  id="form-checkout__submit">Pagar</button>
+
+
+              </form>
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </p-dialog>
+
+        <button type="button" (click)="showBasicDialog()" icon="pi pi-info-circle" label="Pagar"></button>
+<!--
+        <ngx-paypal *ngIf="showPaypalButtons" [config]="payPalConfig">
+        </ngx-paypal>-->
+      </div>
+      <div class="otros">
+        <span>Otros medios de pagos: </span>
+        <div class="medios flex flex-row justify-center align-center items-center ">
+          <img src="assets/yape.jpg" alt="" >
+          <img src="assets/bcp.jpg" alt="">
+        </div>
+        <div class="metodos w-full center">
+        <p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Otros metodos de Pago"></p-button>
+        <p-dialog header="Otros metodos de pago" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+                  [draggable]="false" [resizable]="false">
+          <p class="m-0">
+            <H1 class="titulop">Puedes realizar tus pagos con distintos medios de pago: </H1>
+            <div class="medio flex ">
+              <img src="assets/yape.jpg" alt="">
+              <img src="assets/bcp.jpg" alt="">
+              <img src="assets/continental.png" alt="">
+              <img src="assets/plin.png" alt="">
+            </div>
+            <div class="pasos  flex flex-row">
+                  <div class="yape w-1/2">
+                    <p>Pago via  por Yape o PLin:</p>
+                  </div>
+                  <div class="plin w-1/2">
+                  <span > 1) Para realizar un pago por yape Escaneé el siguiente <input type="checkbox" name="" id="bt-modal">
+                    <label for="bt-modal" class="lbl-modal">Codigo QR</label>
+                    <div class="modal">
+                      <div class="contenedor">
+                        <header>Codigo QR Yape</header>
+                        <label for="bt-modal">X</label>
+                        <div class="contenido">
+                          <img src="assets/QR%20YAPE.JPG" alt="">
+                          </div>
+                      </div>
+                    </div>
+                  </span><br>
+
+                    <span > 2) Para realizar un pago por plin Escaneé el siguiente <input type="checkbox" name="" id="bt-modal1">
+                    <label for="bt-modal1" class="lbl-modal1">Codigo QR</label>
+                    <div class="modal1">
+                      <div class="contenedor1">
+                        <header>Codigo QR Plin</header>
+                        <label for="bt-modal1">X</label>
+                        <div class="contenido1">
+                          <img src="assets/PLINQR.jpg" alt="">
+                          </div>
+                      </div>
+                    </div>
+                  </span>
+                  </div>
+            </div>
+          <div class="trans flex flex-row" >
+            <div class="banco1 w-1/2 ">
+              <p>Pago via transferencia bancaria:</p>
+            </div>
+            <div class="banco2 w-1/2">
+              <span>* Pago via banca o transferencia BCP</span>
+              <p>Cuenta Ahorro Soles:  19490684292092</p>
+              <p>CCI: 00219419068429209295</p>
+              <span>* Pago via banca o transferencia BBVA</span>
+              <p>Cuenta Ahorro Soles: <br>0011-0317-0200624924</p>
+              <p>CCI: 011-319-000200624924-53</p>
+
+            </div>
+
+          </div>
+
+            <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+          </ng-template>
+        </p-dialog>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

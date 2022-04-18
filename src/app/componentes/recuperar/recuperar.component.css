@@ -1,0 +1,63 @@
+.recuperar-box{
+display: flex;
+  z-index:999999!important;
+  position:fixed;
+  left:72%;
+  top:15%;
+}
+.caja{
+  border-radius:5px;
+  width: 350px;
+  height: 380px;
+  font-size: 14px!important;
+  color:#000000!important;
+
+  background:#fff;
+  padding: 30px 30px;
+
+
+}
+.registra{
+  cursor:pointer;
+  width: 80%;
+  height: 40px;
+  border:solid 1px #ccc;
+  background:#0072ce;
+  color:#ffffff;
+  margin-top: 30px;
+  margin-left: 10%;
+}
+.btn1{
+  padding: 10px;
+}
+
+.recuperar-box input[type="email"],
+.recuperar-box input[type="password"]{
+
+  border: none;
+  border-bottom: 1px solid #000000;
+  background: transparent;
+  height:40px;
+}
+.emaill{
+  width: 100%;
+  padding-top: 20px;
+}
+.regresar{
+  border: none;
+  cursor: pointer;
+  margin-top:30px;
+}
+h2{
+  padding-top: 20px;
+}
+h4{
+  padding-top: 20px;
+}
+.registra:hover{
+  opacity: 50%;
+
+}
+.regresar:hover{
+  color:#0072ce;
+}

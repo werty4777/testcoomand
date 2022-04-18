@@ -1,0 +1,183 @@
+<div class="cabecera" (window:scroll)="skrol($event)">
+  <div class="adrian">
+    <a href="#"><i class="fas fa-phone-alt"></i> (51) 981646447</a>
+    <a href="#"><i class="far fa-envelope"></i> Informes@distribuidorahilton.com</a>
+  </div>
+</div>
+<div class="head" #head>
+
+  <div class="superior">
+    <div class="bar">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="img">
+      <a routerLink=""><img src="../../../assets/Logo.png" width="250" alt="logo"></a>
+    </div>
+
+
+    <div class="busqueda">
+
+        <span class="p-input-icon-right">
+        <i  class="pi pi-search lupa " (click)="buscarProductos()"></i>
+        <input class="w-96 inputsisto" type="text" pInputText [(ngModel)]="Busqueda" placeholder="¿Que busca?">
+</span>
+    </div>
+
+    <div class="top-left">
+      <a href="https://goo.gl/maps/RHeK2vBZbAFQpcVLA" target="blank">
+        <i class="fas fa-map-marker-alt"></i>
+        Villa el Salvador</a>
+
+      <a (click)="mcarrito()">
+        <i class="fas fa-shopping-cart "></i>
+      </a>
+
+      <a (mouseenter)="mformulario()">
+        <i class="fas fa-user "></i>
+
+      <span>{{logeado==false  ? 'Iniciar sesión': 'Bienvenido '+ (this.datausuario.length >0 ? this.datausuario[0].name : '')}}</span>
+
+      </a>
+    </div>
+  </div>
+  <div class="menu-bar">
+
+    <ul>
+      <li class="desplegar1"><a href="#">AGUA</a>
+        <div class="sub-menu1">
+          <div class="menu1">
+            <div><a routerLink="/Productos/aguapvc" [state]="{ categoria: 1,sub:'pvc' }">Tuberias PVC</a></div>
+            <div><a routerLink="/Productos/aguapvcpvc" [state]="{ categoria: 1,sub:'Conexiones de Agua PVC' }">Conexiones de Agua PVC</a></div>
+            <div><a routerLink="/Productos/aguapvcgalva" [state]="{ categoria: 1,sub:'Conexiones de agua galvanizado' }">Conexiones de Agua Galvanizado</a></div>
+            <div><a href="#">Medidores</a></div>
+            <div><a routerLink="/Productos/agualuni" [state]="{ categoria: 1,sub:'Llaves con Universal' }">Llaves con universal</a></div>
+            <div><a routerLink="/Productos/aguateflo" [state]="{ categoria: 1,sub:'Teflones' }">Teflones</a></div>
+            <div><a routerLink="/Productos/canospasollave" [state]="{ categoria: 1,sub:'Llaves de paso' }">Llaves de paso</a></div>
+            <div><a href="#">Check </a></div>
+
+          </div>
+        </div>
+      </li>
+      <li class="desplegar2"><a href="#">DESAGÜE</a>
+        <div class="sub-menu2">
+          <div class="menu2">
+            <div><a href="#">Tuberias PVC</a></div>
+            <div><a href="#">Conexiones PVC</a></div>
+            <div><a href="#">Trampas</a></div>
+            <div><a routerLink="/Productos/desaani" [state]="{ categoria: 2,sub:'Anillos de cera' }">Anillos de Cera</a></div>
+          </div>
+
+        </div>
+      </li>
+      <li class="desplegar3"><a href="#">LÚZ</a>
+        <div class="sub-menu3">
+          <div class="menu3">
+            <div><a routerLink="/Productos/tbsel" [state]="{ categoria: 6,sub:'Tuberias y conexiones SEL' }">Tuberias y conexiones SEL</a></div>
+            <div><a routerLink="/Productos/tbsap" [state]="{ categoria: 6,sub:'Tuberias y conexiones SAP' }">Tuberias y conexiones SAP</a></div>
+            <div><a href="#">Focos</a></div>
+            <div><a routerLink="/Productos/luzlla" [state]="{ categoria: 6,sub:'Llaves Termicas' }">Llaves termicas</a></div>
+            <div><a routerLink="/Productos/luztoma" [state]="{ categoria: 6,sub:'Tomacorriente' }">Tomacorrientes</a></div>
+            <div><a routerLink="/Productos/luzluc" [state]="{ categoria: 6,sub:'Luces de emergencia' }">Luces de emergencia</a></div>
+            <div><a href="#">Tableros</a></div>
+            <div><a href="#">Medidores</a></div>
+            <div><a routerLink="/Productos/luzcaj" [state]="{ categoria: 6,sub:'Caja de Luz' }">Cajas de Lúz</a></div>
+
+
+          </div>
+
+        </div>
+      </li>
+
+      <li class="desplegar9"><a href="#">AGUA CALIENTE</a>
+        <div class="sub-menu9">
+          <div class="menu9">
+            <div><a routerLink="/Productos/caltefteflo" [state]="{ categoria: 5,sub:'Tuberias PVC' }">Tuberias PVC</a></div>
+            <div><a href="#">Conexiones de Agua PVC</a></div>
+            <div><a  routerLink="/Productos/caltef" [state]="{ categoria: 5,sub:'Teflones' }">Teflones</a></div>
+          </div>
+        </div>
+      </li>
+
+      <li class="desplegar4"><a href="#">PEGAMENTOS</a>
+        <div class="sub-menu4">
+          <div class="menu4">
+            <div><a routerLink="/Productos/pegaoaety" [state]="{ categoria: 7,sub:'Pegamentos Oatey' }">Pegamentos Oatey</a></div>
+            <div><a routerLink="/Productos/pegatodomento" [state]="{ categoria: 7,sub:'Pegamentos' }">Pegamentos</a></div>
+            <div><a  routerLink="/Productos/pegasili" [state]="{ categoria: 7,sub:'Siliconas' }">Siliconas</a></div>
+            <!--<div><a href="#">Terocal</a></div>
+            <div><a href="#">Soldimix</a></div>
+            <div><a href="#">Adex</a></div>-->
+          </div>
+        </div>
+      </li>
+      <li class="desplegar5"><a href="#">GRIFERIA</a>
+        <div class="sub-menu5">
+          <div class="menu5">
+            <div><a routerLink="/Productos/grifartcanos" [state]="{ categoria: 4,sub:'Canos de jardin' }" href="#">Caños de jardin</a></div>
+            <div><a href="#">Llaves de ducha</a></div>
+            <div><a routerLink="/Productos/grifart" [state]="{ categoria: 4,sub:'Articulos de Ducha' }">Articulos para Duchas</a></div>
+            <div><a href="#">Llaves de cocina cisne</a></div>
+            <div><a href="#">Difusor de ducha y manguera</a></div>
+            <div><a href="#">Rejillas</a></div>
+            <div><a href="#">Sumideros</a></div>
+
+
+          </div>
+        </div>
+      </li>
+      <li class="desplegar6"><a href="#">GASFITERIA</a>
+        <div class="sub-menu6">
+          <div class="menu6">
+
+
+            <div><a href="#">Tubos de abasto</a></div>
+            <div><a href="#">Anillo de cera</a></div>
+            <div><a href="#">Productos varios</a></div>
+
+          </div>
+        </div>
+      </li>
+      <li class="desplegar7"><a href="#">HERRAMIENTAS </a>
+        <div class="sub-menu7">
+          <div class="menu7">
+            <div><a href="#">Herramientas en General</a></div>
+            <div><a href="#">Herramientas de Pintura</a></div>
+            <div><a href="#">Herramientas de corte</a></div>
+            <div><a routerLink="/Productos/herrachapa" [state]="{ categoria: 3,sub:'Chapa de puerta' }">Chapas de puerta</a></div>
+            <div><a  routerLink="/Productos/herrpla" [state]="{ categoria: 3,sub:'Plasticos y mallas' }">Plasticos y Mallas</a></div>
+            <div><a href="#">Guantes</a></div>
+
+          </div>
+        </div>
+      </li>
+
+      <li class="desplegar8"><a href="#"> LIMPIEZA</a>
+        <div class="sub-menu8">
+          <div class="menu8">
+            <div><a href="#">Escobas y recogedores</a></div>
+            <div><a href="#">Desinfectantes</a></div>
+            <div><a href="#">Ambientadores</a></div>
+            <div><a href="#">Ceras</a></div>
+            <div><a href="#">Acidos y Antioxidantes</a></div>
+            <div><a href="#">Lejias</a></div>
+
+
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</div>
+<app-pop-up (mouseleave)="qformulario()" *ngIf="(Login==true || perfilpopup==true) ">
+
+</app-pop-up>
+<p-sidebar [(visible)]="Carrito" position="right" [showCloseIcon]="false"  >
+  <app-carrito>
+
+  </app-carrito>
+</p-sidebar>
+
+

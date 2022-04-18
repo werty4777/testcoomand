@@ -1,0 +1,46 @@
+.Productos{
+  padding-top:150px;
+}
+.barraizquierda{
+  padding-top: 160px;
+}
+.precios{
+  margin-top: 20px;
+  padding: 5px;
+  border: solid #ccc 1px;
+  background: #f6f6f6;
+
+}
+.botoncarrito:hover > svg{
+  fill: #f0ae0e;
+}
+botoncarrito:hover{
+}
+.botoncarrito> svg{
+  fill: white;
+}
+.cuadrito{
+  border-top:solid 2px #4488dd;
+  background: white;
+}
+.cuadrito h5{
+  font-family: Poppins  ;
+  font-size: 12px;
+  color: black;
+}
+.precioasos{
+  color:white;
+}
+.borde{
+  width: 100px;
+  background:#0c4a97;
+
+  border-radius: 3px;
+}
+.fuera{
+  width: 100%;
+
+}
+.cuadrote:hover{
+  border: solid 2px #008dff;
+}

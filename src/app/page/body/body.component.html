@@ -1,0 +1,106 @@
+<p-carousel [value]="datacarousel" [circular]="true" [autoplayInterval]="3000" [showIndicators]="false">
+  <ng-template let-data pTemplate="item">
+    <div class="imagen">
+      <img [src]="data.path" alt="Principales Porductos">
+    </div>
+  </ng-template>
+</p-carousel>
+<div class="nmarcas">
+  <h1>Marcas con las que trabajamos</h1>
+</div>
+<p-carousel [value]="marcascarousel" [numVisible]="5" [circular]="true" [autoplayInterval]="2000"
+            [showIndicators]="false">
+  <ng-template let-car pTemplate="item">
+    <div class="imagen1">
+      <img [src]="car.path" alt="Marcas Principales">
+    </div>
+  </ng-template>
+</p-carousel>
+
+
+<div class="banner">
+  <div class="bannerfondo" #nombre (mouseenter)="paraelmouse()" (mouseleave)="qmouse()">
+    <a routerLink="/Contactanos"><img src="../../../assets/banner.jpg" alt="Cotiza con nosotros"></a>
+  </div>
+</div>
+<div class="promociones">
+  <div class="wrap w-full h-full flex flex-row todo">
+    <!-- <div class="izquierda w-1/2 flex flex-row justify-center align-center items-center" >-->
+    <!--<div class="imagen1 flex flex-row justify-center align-center items-center" </div>>-->
+    <div class="pho w-1/3 flex flex-row justify-center align-center items-center">
+      <img src="../../../assets/outlet.jpg">
+      <div class="BTN">
+        <button>Ver Ofertas</button>
+      </div>
+    </div>
+
+    <div class="pho1 w-1/3 flex flex-row justify-center align-center items-center">
+      <img src="../../../assets/nuestro.jpg">
+      <div class="BTN">
+        <button>Ver Más</button>
+      </div>
+    </div>
+
+    <div class="pho2 w-1/3 flex flex-row justify-center align-center items-center">
+      <img src="../../../assets/VELAS.jpg">
+
+    </div>
+
+  </div>
+</div>
+
+<div class="destacado2">
+  <p>Lo más vendido</p>
+</div>
+
+<div class="carruselito">
+  <p-carousel [value]="marketcarousel" [numVisible]="3" [circular]="true" [autoplayInterval]="5000"
+              [showIndicators]="false">
+    <ng-template let-item pTemplate="item">
+      <div class="foto">
+
+        <div
+          class="cuadrote bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+          <figure class="mb-2">
+            <img src="{{item.foto}}" alt="" class="h-64 ml-auto mr-auto"/>
+          </figure>
+          <div class="rounded-lg p-4  flex flex-col cuadrito">
+            <div>
+              <h5 class="text-white text-2xl font-bold leading-none">
+                {{item.nombre}}
+              </h5>
+
+            </div>
+            <div class="flex flex-row">
+
+              <div class="flex items-center  flex-row justify-center fuera items-center text-center">
+                <div class="borde">
+                  <div class="text-lg text-white font-light precioasos">
+                    S/{{item.precio}}
+                  </div>
+                </div>
+
+              </div>
+              <button (click)="agregarCarrito(item)"
+                      class="botoncarrito rounded-full bg-dazzle-strong text-white flex flex-row justify-center items-center hover:bg-white hover:text-dazzle-strong hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path
+                    d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+  <p-dialog header="Ofertas" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'} "
+            [draggable]="false" [resizable]="false" [showHeader]="false" [maximizable]="true">
+    <img src="assets/poner.jpg" alt="" width="650x">
+
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
+
+</div>

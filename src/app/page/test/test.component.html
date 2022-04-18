@@ -1,0 +1,11 @@
+<div class="prueba">
+  <div class="item" *ngFor="let Item of Para">
+    <div class="img">
+      <img [src]="Item.img" alt="condon">
+    </div>
+    <h2>{{Item.name}}</h2>
+    <h3>{{Item.moneda+Multiplicar(Item.precio)}}</h3>
+    <H2>{{Item.status}}</H2>
+  </div>
+  {{data  | json}}
+</div>

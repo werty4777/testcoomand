@@ -1,0 +1,66 @@
+<div class="cabecera">
+  <h1>Editar Datos Personales</h1>
+  <p>Actualiza tu informacion personal sobre tu inicio de sesión,correo electronico y contraseña</p>
+</div>
+
+  <div class="datos flex flex-row w-full ">
+
+<div class="box1 w-1/2">
+  <span class="p-float-label">
+  <input id="float-input-invalid" type="text" pInputText [(ngModel)]="nombre" class="ng-invalid ng-dirty">
+    <label for="float-input-invalid">Nombre</label>
+  </span>
+
+  <div class="p-inputtext-sm iden">
+    <div class="col-4 md:col-2 lg:col-1">
+      <h4>Documento de Identidad</h4>
+      <p-inputMask mask="99999999" [disabled]="true" [(ngModel)]="dni" placeholder="99999999" [maxlength]="8" ></p-inputMask>
+    </div>
+  </div>
+
+  <!--<div class="fecha">
+    <h4>Fecha de nacimiento <br></h4>
+    <p-inputMask mask="99/99/9999" [(ngModel)]="fecha" placeholder="mm/dd/yyyy" slotChar="mm/dd/yyyy"></p-inputMask>
+  </div>-->
+
+</div>
+
+
+      <div class="box2 w-1/2">
+    <span class="p-float-label">
+  <input id="float-input-invalid1" type="text" pInputText [(ngModel)]="apellidos" class="ng-invalid ng-dirty">
+    <label for="float-input-invalid1">Apellidos</label>
+  </span>
+
+        <div class="p-inputtext-sm num">
+          <div class="col-4 md:col-2 lg:col-1">
+            <h4>Numero de telefono</h4>
+            <p-inputMask mask="999-999-999" [(ngModel)]="telefono" placeholder="Opcional*" [maxlength]="8" ></p-inputMask>
+          </div>
+        </div>
+
+      </div>
+  </div>
+<div class="pie">
+  <h1>Cambiar contraseña</h1>
+  <p>Actualiza tu contraseña periodicamente para mayor seguridad</p>
+</div>
+
+<div class="dotas flex flex-row w-full ">
+  <div class="box3 w-1/2 pass">
+<div class="contraseña">
+  <h3>Contraseña</h3>
+
+  <p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password>
+</div>
+</div>
+  <div class="box4 passn">
+    <div class="contraseña">
+      <h3>Contraseña Nueva</h3>
+      <p-password  [(ngModel)]="passwordnew" [toggleMask]="true" [inputStyleClass]="'contraseña'"></p-password>
+    </div>
+  </div>
+</div>
+<div class="boton flex justify-center	">
+  <button>Guardar Cambios</button>
+</div>

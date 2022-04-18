@@ -1,0 +1,33 @@
+<div class="todo wrap w-full  flex flex-row gap-x-4">
+
+  <div class="barraizquierda w-1/4 " >
+
+  <div class="foto w-28 h-28">
+    <img [src]="data.photo==''? 'assets/usuario.png': data.photo" alt="usuario">
+
+  </div>
+    <div class=" w-full flex flex-row">
+      <span style="border:solid 0px blue" class="w-full text-center">Bienvenido</span>
+    </div>
+    <div class="botones flex flex-col">
+      <div class="btn1 w-full  " (click)="index=0" [ngClass]="index==0 ? 'selectab' : 'btn1'" >
+        <div class="flex flex-row text-left">
+          <span class="w-full" >Perfil</span>
+        </div>
+      </div>
+
+      <div class="btn3 " (click)="index=1" [ngClass]="index==1 ? 'selectab' : 'btn1'">
+        <span >Pedidos</span>
+      </div>
+
+    </div>
+
+</div>
+  <div  class="barraderecha flex flex-col w-3/4 h-full p-10 bg-gray-100 text-gray-800 Productos " >
+
+    <app-perfil-usuario *ngIf="index==0"></app-perfil-usuario>
+    <app-pedidos *ngIf="index==1"></app-pedidos>
+
+
+</div>
+</div>

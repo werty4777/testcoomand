@@ -1,0 +1,58 @@
+<div class="caja-registro">
+  <div class="registro">
+    <h2>Ingresa tus datos</h2>
+    <h3>Nombre</h3>
+    <input type="text" #inputsito pInputText [ngClass]="inputsito.value.length<=0?'ng-invalid ng-dirty':''">
+
+    <h3>Apellidos</h3>
+    <input type="text" #inputsito1 pInputText [ngClass]="inputsito1.value.length<=0?'ng-invalid ng-dirty':''">
+
+    <h3>Tipo de documento</h3>
+    <select #datos [(ngModel)]="valores" [ngModelOptions]="{standalone: true}">
+
+      <option value="1">
+        DNI
+      </option>
+      <option value="2">
+        Carnet de Extranjeria
+      </option>
+    </select>
+    <div *ngIf="valores=='1'">
+      <h3>Nº de DNI</h3>
+      <p-inputMask [(ngModel)]="mascara" mask="99999999"  placeholder="99999999" [ngClass]="mascara.length<=0?'ng-invalid ng-dirty':''"></p-inputMask>
+
+
+    </div>
+    <div *ngIf="valores=='2'">
+      <h3 class="ex">Nº Carnet de extranjería</h3>
+      <p-inputMask [(ngModel)]="mascara" mask="999999"  placeholder="999999" [ngClass]="mascara.length<=0?'ng-invalid ng-dirty':''"></p-inputMask>
+
+
+    </div>
+
+    <div class="grid p-fluid">
+      <div class="cajanumero">
+        <h3>Correo electronico</h3>
+        <input type="email" #inputsito3 pInputText [ngClass]="inputsito3.value.length<=0?'ng-invalid ng-dirty':''">
+        <h3>Teléfono</h3>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-phone"> +51</i></span>
+          <input #fono class="telefono" type="text" pInputText placeholder="Ej.999999999">
+        </div>
+
+      </div>
+
+      <div class="contraseña">
+        <h3>Contraseña</h3>
+        <p-password  [(ngModel)]="password" [toggleMask]="true" [inputStyleClass]="'contraseña'"></p-password>
+
+      </div>
+
+       <div class="btnc" (click)="registrar(inputsito.value,inputsito1.value,datos.value,inputsito3.value,fono.value,password)">
+        <a><button  class="Crear cuenta" type="button" >Registrate</button></a>
+      </div>
+    </div>
+
+    </div>
+
+</div>

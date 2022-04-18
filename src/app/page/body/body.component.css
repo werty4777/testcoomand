@@ -1,0 +1,269 @@
+.imagen{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-top:150px;
+
+}
+.imagen>img{
+  width: 1000px;
+  height: 300px;
+
+}
+.imagen1>img{
+  width: 200px;
+  height: 120px;
+}
+.foto>img{
+  padding-top:20px;
+  padding-left:20px;
+  width: 100%;
+}
+
+
+.banner{
+  width: 100%;
+  height: 100%;
+  padding-top:20px;
+  display: flex;
+  justify-content: center;
+}
+.bannerfondo{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #0c4a97;
+
+}
+.galindo{
+  opacity: 50%;
+}
+.promociones{
+  display: flex;
+  width: 100%;
+  height: 400px;
+
+
+}
+.pho{
+  width: 350px;
+  margin-top: 12px;
+
+}
+.todo{
+  margin-left:1%;
+}
+.pho1{
+  width: 350px;
+  margin-top: 12px;
+
+}
+.pho2 img{
+  border-radius:10%;
+  transition: all 1s ease;
+  z-index:2;
+  width: 330px;
+}
+.todo{
+  gap:10%;
+}
+.borde{
+  width: 350px;
+  margin-top: 12px;
+  margin-left:10%;
+  position:relative;
+}
+
+.pho img{
+  border-radius:10%;
+  transition: all 1s ease;
+  z-index:2;
+}
+.pho1 img{
+  border-radius:10%;
+  transition: all 1s ease;
+  z-index:2;
+}
+.pho2:hover{
+  cursor: pointer;
+  transform:scale(1.1);
+  transition: all 1s ease;
+  z-index:2;;
+}
+.pho img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.pho1 img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.pho:hover>.BTN{
+
+  opacity: 100%;
+  z-index: 3;
+  transform: translate(0,-50%);
+  transition: all 1.3s ease;
+
+
+}
+.pho1:hover>.BTN{
+
+  opacity: 100%;
+  z-index: 3;
+  transform: translate(0,-50%);
+  transition: all 1.3s ease;
+
+
+}
+
+.BTN{
+  position: absolute;
+
+  width: 120px;
+  height: 50px;
+  background: white;
+  color: black;
+  text-align: center;
+  border-radius: 20px;
+  opacity: 0%;
+  transform: translate(0,120%);
+  cursor:pointer;
+}
+button{
+  padding-top: 10px;
+  font-size: 18px;
+  cursor:pointer;
+}
+
+.borde:hover>.BTN{
+  opacity: 100%;
+  z-index: 3;
+  transform: translate(0,-50%);
+  transition: all 1.3s ease;
+}
+
+.borde img{
+  border-radius:20px;
+  transition: all 1s ease;
+  z-index:2;
+
+
+}
+.borde img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.borde:hover>.BTN{
+
+  opacity: 100%;
+  z-index: 3;
+  transform: translate(0,-50%);
+  transition: all 1.3s ease;
+
+}
+.destacado{
+  margin-top: 30px;
+  color:#fff;
+  width: 300px;
+  height: 40px;
+  font-size: 25px;
+  background: #0072ce;
+  font-family: Arial, serif;
+
+  display:flex;
+  justify-content: center;
+}
+.destacado2{
+  font-family:sans-serif;
+  color :#0072ce;
+  font-size: 30px;
+  padding-left: 5%;
+}
+.botoncarrito:hover > svg{
+
+  fill: black;
+}
+.botoncarrito> svg{
+  fill: white;
+}
+
+.Productos{
+  padding-top:150px;
+}
+.barraizquierda{
+  padding-top: 160px;
+}
+.precios{
+  margin-top: 20px;
+  padding: 5px;
+  border: solid #ccc 1px;
+  background: #f6f6f6;
+
+}
+.botoncarrito:hover > svg{
+  fill: #f0ae0e;
+}
+botoncarrito:hover{
+}
+.botoncarrito> svg{
+  fill: white;
+}
+.cuadrito{
+  border-top:solid 2px #4488dd;
+  background: white;
+}
+.cuadrito h5{
+  font-family: Poppins  ;
+  font-size: 12px;
+  color: black;
+}
+.precioasos{
+  color:white;
+}
+.borde{
+  width: 100px;
+  background:#0c4a97;
+
+  border-radius: 3px;
+}
+.fuera{
+  width: 100%;
+
+}
+@media screen and (max-width: 720px) {
+  .todo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .promociones{
+
+    width: 100%;
+    height: auto;
+  }
+  .pho{
+    width: 400px;
+    margin-top: 12px;
+    margin-left:0;
+  }
+  .pho1{
+    width: 400px;
+    margin-top: 12px;
+
+  }
+}
+
+.nmarcas{
+  width: 100%;
+  height: 50px;
+  background:#0c4a97 ;
+}
+.nmarcas h1{
+  font-size: 20px;
+  color: white;
+  margin-left: 2%;
+  padding-top: 0.8%;
+}

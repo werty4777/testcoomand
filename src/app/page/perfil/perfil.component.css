@@ -1,0 +1,73 @@
+.todo{
+  margin-top: 10%;
+  padding: 2% 8%;
+  background: #eaeaea;
+  height: 700px;
+
+}
+.barraizquierda{
+  background: #ffffff;
+  box-shadow: 0 0 3px #939292;
+  border-radius: 5px;
+  height: 45% !important;
+}
+.barraderecha{
+  background: #ffffff;
+  box-shadow: 0 0 3px #939292;
+  border-radius: 5px;
+  height:100%;
+}
+.foto{
+  background: #cccccc;
+  border-radius: 100%;
+  box-shadow: 0 0 2px #939292;
+  margin-left: 30%;
+  margin-top:5%;
+
+
+}
+.foto img {
+
+  border-radius: 100%;
+}
+.barraizquierda span{
+
+  color: #696969;
+  font-size: 12px;
+
+}
+
+.botones{
+  margin-top: 20px;
+  width: 100%;
+
+}
+
+
+.btn1,.btn2,.btn3{
+  margin-left:20px;
+  margin-right:20px;
+  padding-top: 13px;
+  padding-right: 13px;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  border-top: solid #ccc 1px;
+  font-size: 13px;
+
+}
+.btn1:active{
+  font-size: 15px;
+  border-top: solid #ccc 1px;
+  border-left:solid  3px #0c4a97;
+}
+.selectab{
+  font-size: 15px;
+  border-top: solid #ccc 1px;
+  border-left:solid  3px #0c4a97;
+}
+
+
+.botones span{
+  cursor: pointer;
+}
+

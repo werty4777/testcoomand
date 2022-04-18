@@ -1,0 +1,41 @@
+<div class="container-form">
+        <div class="info-form">
+            <h2>Cotiza con nosotros</h2>
+                <p>
+                    Nuestro equipo de trabajo esta capacitado para atender tu llamada sea cotizacion de producto o cotizaciones.
+                  <br>Para cualquier inofrmación contactate por nosotros por cualquier medio de comunicación
+                </p>
+                <p><i class="fa fa-phone"></i>+51 981646447</p>
+                <p><i class="fa fa-envelope"></i>  Cotizacionesmaroishi@gmail.com</p>
+                <p><i class="fa fa-map-marked"></i>  Lima, Perú</p>
+        </div>
+        <form action="#" autocomplete="off">
+            <span class="p-float-label">
+            <input  class="campo" #name id="float-input" type="text" pInputText>
+            <label for="float-input">Ingrese su nombre</label>
+
+            </span>
+
+            <span class="p-float-label label2">
+            <input  class="campo" #email id="float-input1" type="email" pInputText>
+            <label for="float-input1">Ingrese su correo</label>
+
+            </span>
+            <span class="p-float-label area">
+            <textarea id="float-input2" rows="5" cols="30" pInputTextarea></textarea>
+            <label for="float-input2">Ingrese su consulta</label>
+            </span>
+
+          <h5>Subir Archivo</h5>
+          <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+                        [multiple]="false" accept="image/*" [maxFileSize]="1000000" >
+            <ng-template pTemplate="content">
+              <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+              </ul>
+            </ng-template>
+          </p-fileUpload>
+
+            <input type="button" name="enviar" value="Enviar mensaje" class="btn-enviar" (click)="alerta(name.value,email.value)" >
+        </form>
+ </div>
